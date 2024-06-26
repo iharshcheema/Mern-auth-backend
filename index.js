@@ -13,7 +13,10 @@ const uri = process.env.URI
 const authRoutes = require('./routes/authRoutes')
 
 app.use(
-  cors({ credentials: true, origin: 'https://mern-auth-react.vercel.app' })
+  cors({
+    credentials: true,
+    origin: 'https://667bec5cd951da1e4bf5fc44--mernauthreact.netlify.app',
+  })
 )
 // credentials: Configures the Access-Control-Allow-Credentials CORS header. Set to true to pass the header, otherwise it is omitted.
 
