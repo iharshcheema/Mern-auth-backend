@@ -5,9 +5,9 @@ const logOutUser = (req, res) => {
       .status(200)
       .cookie('token', '', {
         httpOnly: true,
-        sameSite: 'None', // Required for cross-origin cookies
-        // secure: true, // Ensure this is enabled if served over HTTPS
-        expires: new Date(0), // Immediately expire the cookie
+        sameSite: 'None',
+        secure: true,
+        expires: new Date(0),
       })
       .json({
         success: true,
