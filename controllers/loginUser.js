@@ -43,11 +43,14 @@ const loginUser = async (req, res) => {
           if (err) {
             throw err
           }
-          res.status(200).cookie('token', token, { httpOnly: true }).json({
-            payload: userinDB.username,
-            success: true,
-            message: 'Signed in',
-          })
+          res
+            .status(200)
+            .cookie('token', token, { httpOnly: true, sameSite: 'None' })
+            .json({
+              payload: userinDB.username,
+              success: true,
+              message: 'Signed in',
+            })
         }
       )
     }
