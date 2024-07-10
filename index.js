@@ -12,10 +12,15 @@ const uri = process.env.URI
 
 const authRoutes = require('./routes/authRoutes')
 
+const allowedOrigins = [
+  'https://mern-auth-react.vercel.app',
+  'http://localhost:5173',
+]
+
 app.use(
   cors({
     credentials: true,
-    origin: 'https://mern-auth-react.vercel.app',
+    origin: allowedOrigins,
   })
 )
 // credentials: Configures the Access-Control-Allow-Credentials CORS header. Set to true to pass the header, otherwise it is omitted.
